@@ -1,20 +1,31 @@
 NAME = push_swap
+
+SRC = push_swap.c
+OBJS = $(SRC:.c=.o)
+
 LIB = libft/libft.a
 RM = rm -f
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJS) $(LIB)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIB):
 	cd libft && make
-	$(CC) $(CFLAGS) libft/libft.a main.c  -o $(NAME)
 
-clean : 
-	$(RM) libft/*.o
+clean:
+	$(RM) $(OBJS)
+	cd libft && make clean
 
-fclean : clean
-	$(RM) $(LIB) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
+	cd libft && make fclean
 
 re: fclean all
 
