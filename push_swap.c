@@ -1,23 +1,44 @@
-#include "libft/libft.h"
 #include "push_swap.h"
 
-t_list	*put_me(int nb)
-{
-	t_list *new_node;
-	new_node = malloc (sizeof(t_list));
-	new_node->data = nb;
-}
 int	main(int ac, char **av)
 {
+	t_list	*node;
 	t_list	*stack_a;
+	t_list	*stack_b;
+	t_list	*tmp;
 	int		i;
-	(void) av;
+	int		b;
+
+	stack_b = NULL;
+	tmp = stack_a;
+	b = 0;
 	i = 1;
 	if (ac < 2)
 		return (write(1, "Error\n", 6), 0);
 	while (av[i])
 	{
-		put_me(ft_atoi(av[i]));
+		node = ft_lstnew(ft_atoi(av[i]));
+		ft_lstadd_front(&stack_a, node);
 		i++;
 	}
+	while (tmp)
+	{
+		printf("%d\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+	pb(&stack_a, &stack_b);
+	while (stack_a)
+	{
+		printf("%d\n", stack_a->content);
+		stack_a = stack_a->next;
+	}
+	return (0);
 }

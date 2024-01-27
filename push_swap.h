@@ -7,8 +7,34 @@
 
 typedef struct s_struct {
     int data;
-    struct s_list *next;
+    struct s_struct *next;
 } t_type;
+
+typedef struct s_list{
+    int content;
+    struct s_list *next;
+} t_list;
+
+t_list *ft_lstnew(int content);
+int ft_lstsize(t_list *lst);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int ft_atoi(const char *nptr);
+void ft_lstadd_back(t_list **lst, t_list *new);
+t_list *ft_lstlast(t_list *lst);
+void sa(t_list **stack_a, int i);
+void sb(t_list **stack_b, int i);
+void ss (t_list **stack_a, t_list **stack_b, int i);
+void ra(t_list **stack_a, int i);
+void rb(t_list **stack_b, int i);
+void rr(t_list **stack_a, t_list **stack_b, int i);
+void rra(t_list **stack_a, int i);
+void rrb(t_list **stack_a, int i);
+void rrr(t_list **stack_a,t_list ** stack_b, int i);
+void pa(t_list **stack_a, t_list **stack_b);
+void pb(t_list **stack_b, t_list **stack_a);
+
+
+
 
 
 #endif

@@ -1,32 +1,21 @@
 NAME = push_swap
 
-SRC = push_swap.c
-OBJS = $(SRC:.c=.o)
+SRC = push_swap.c utils.c utils1.c actions1.c actions2.c \
+	  actions3.c
+	
 
-LIB = libft/libft.a
-RM = rm -f
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+OBJ =  $(SRC:.c=.o)
 
-all: $(NAME)
+all : $(NAME)
 
-$(NAME): $(OBJS) $(LIB)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIB)
+$(NAME):
+	
+	gcc -Wall -Wextra -Werror -fsanitize=address $(SRC) -o $(NAME) 
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+clean :
+	rm -f $(OBJ)
 
-$(LIB):
-	cd libft && make
+fclean : clean
+	rm -f $(NAME)
 
-clean:
-	$(RM) $(OBJS)
-	cd libft && make clean
-
-fclean: clean
-	$(RM) $(NAME)
-	cd libft && make fclean
-
-re: fclean all
-
-.PHONY: all clean fclean re
+re : fclean all
