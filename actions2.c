@@ -14,9 +14,9 @@ void	rra(t_list **stack_a, int i)
 	t_list	*tmp;
 	t_list	*hold;
 
-	tmp = (*stack_a);
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
+	tmp = (*stack_a);
 	while (tmp->next->next)
 		tmp = tmp->next;
 	hold = tmp->next;
@@ -32,9 +32,9 @@ void	rrb(t_list **stack_b, int i)
 	t_list	*tmp;
 	t_list	*hold;
 
-	tmp = (*stack_b);
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
+	tmp = (*stack_b);
 	while (tmp->next->next)
 		tmp = tmp->next;
 	hold = tmp->next;

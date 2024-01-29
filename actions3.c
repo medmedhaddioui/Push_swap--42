@@ -1,8 +1,23 @@
-// void pb(t_list **stack_b, t_list **stack_a)
-// {
-//     t_list *tmp;
-//     tmp = *stack_a;
-//     tmp ->next =NULL;
-//     stack_b = tmp;
-//     write(1,"pb\n",1);
-// }
+#include "push_swap.h"
+
+void pa(t_list **stack_a, t_list **stack_b)
+{
+    if (*stack_b == NULL)
+        return;
+    t_list *first_node;
+    first_node = *stack_b;
+	*stack_b = (*stack_b)->next;
+	ft_lstadd_front(&(*stack_a),first_node);
+	write(1,"pa\n",3);
+}
+void	pb(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*first_node;
+
+	if (*stack_a == NULL)
+		return;
+	first_node = *stack_a;
+	*stack_a = (*stack_a)->next;
+	ft_lstadd_front(*(&stack_b), first_node);
+	write(1,"pb\n",3);
+}

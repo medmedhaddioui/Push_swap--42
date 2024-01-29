@@ -5,11 +5,6 @@
 # include <unistd.h>
 #include <stdio.h>
 
-typedef struct s_struct {
-    int data;
-    struct s_struct *next;
-} t_type;
-
 typedef struct s_list{
     int content;
     struct s_list *next;
@@ -31,7 +26,13 @@ void rra(t_list **stack_a, int i);
 void rrb(t_list **stack_a, int i);
 void rrr(t_list **stack_a,t_list ** stack_b, int i);
 void pa(t_list **stack_a, t_list **stack_b);
-void pb(t_list **stack_b, t_list **stack_a);
+void pb(t_list **stack_a, t_list **stack_b);
+void	parsing(char *av);
+void	ft_exit(void);
+void ft_putstr(char *s);
+void	num_arg(char *av);
+void dup_arg(char *av);
+char	**ft_split(char const *s, char c);
 
 
 

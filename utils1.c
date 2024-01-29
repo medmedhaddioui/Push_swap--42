@@ -7,12 +7,12 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	result = 0;
 	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-	nptr++;
+		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')
 		sign *= -1;
-	nptr ++;
+		nptr ++;
 	}
 	while (*nptr >= '0' && *nptr <= '9')
 	{
@@ -21,3 +21,18 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sign * result);
 }
+void	ft_exit(void)
+{
+	ft_putstr("Error\n");
+	exit(0);
+}
+void ft_putstr(char *s)
+{
+	while (*s)
+	{
+		write(1,s,1);
+		s++;
+	}
+}
+
+

@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRC = push_swap.c utils.c utils1.c actions1.c actions2.c \
-	  actions3.c
+	  actions3.c error.c ft_split.c 
 	
 
 OBJ =  $(SRC:.c=.o)

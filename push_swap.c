@@ -5,36 +5,28 @@ int	main(int ac, char **av)
 	t_list	*node;
 	t_list	*stack_a;
 	t_list	*stack_b;
-	t_list	*tmp;
 	int		i;
-	int		b;
+	char	**tab;
+	int		j;
 
+	tab = NULL;
 	stack_b = NULL;
-	tmp = stack_a;
-	b = 0;
-	i = 1;
-	if (ac < 2)
-		return (write(1, "Error\n", 6), 0);
-	while (av[i])
+	i = ac - 1;
+
+	while (i)
 	{
-		node = ft_lstnew(ft_atoi(av[i]));
-		ft_lstadd_front(&stack_a, node);
-		i++;
-	}
-	while (tmp)
-	{
-		printf("%d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\n");
-	printf("\n");
-	printf("\n");
-	printf("\n");
-	printf("\n");
-	printf("\n");
-	printf("\n");
-	printf("\n");
-	pb(&stack_a, &stack_b);
+		j = 0;
+		tab = ft_split(av[i], ' ');
+		while (tab[j])
+			parsing(tab[j++]);
+		while (j > 0)
+		{
+			node = ft_lstnew(ft_atoi(tab[--j]));
+			ft_lstadd_front(&stack_a, node);
+		}
+		i--;
+	} 
+	printf(" stack_a \n");
 	while (stack_a)
 	{
 		printf("%d\n", stack_a->content);
