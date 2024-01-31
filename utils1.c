@@ -34,5 +34,12 @@ void ft_putstr(char *s)
 		s++;
 	}
 }
-
-
+void ft_free(char **arr)
+{
+	while (*arr)
+	{
+		free(*arr);
+		arr++;
+	}
+	free(arr);
+}

@@ -30,11 +30,15 @@ void pa(t_list **stack_a, t_list **stack_b);
 void pb(t_list **stack_a, t_list **stack_b);
 void	parsing(char *av);
 void	ft_exit(void);
+void ft_free(char **arr);
 void ft_putstr(char *s);
 void	num_arg(char *av);
 void dup_arg (t_list *stack_a);
 char	**ft_split(char const *s, char c);
 t_list *put(char **arr,t_list** stack_a);
+void sort_size(t_list **stack_a, t_list **stack_b);
+void	ft_lstclear(t_list **lst, void (*del)(int *));
+void del (int *content);
 
 
 
