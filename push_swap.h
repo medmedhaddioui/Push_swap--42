@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 #include <stdio.h>
+#include  <string.h>
 
 typedef struct s_list{
     int content;
@@ -31,8 +32,12 @@ void	parsing(char *av);
 void	ft_exit(void);
 void ft_putstr(char *s);
 void	num_arg(char *av);
-void dup_arg(char *av);
+void dup_arg (t_list *stack_a);
 char	**ft_split(char const *s, char c);
+t_list *put(char **arr,t_list** stack_a);
+
+
+
 
 
 
