@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils1.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
+/*   Updated: 2024/01/31 17:30:40 by mel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "push_swap.h"
 int	ft_atoi(const char *nptr)
 {
@@ -36,10 +49,12 @@ void ft_putstr(char *s)
 }
 void ft_free(char **arr)
 {
-	while (*arr)
+	int j;
+	j  = 0;
+	while (arr [j])
 	{
-		free(*arr);
-		arr++;
+		free(arr[j]);
+		j++;
 	}
 	free(arr);
 }

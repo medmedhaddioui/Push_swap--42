@@ -39,12 +39,9 @@ t_list *put(char **arr,t_list** stack_a);
 void sort_size(t_list **stack_a, t_list **stack_b);
 void	ft_lstclear(t_list **lst, void (*del)(int *));
 void del (int *content);
-
-
-
-
-
-
-
-
+void sort_size(t_list **stack_a, t_list **stack_b);
+void sort_3(t_list **stack_a);
+void sort_4 (t_list **stack_a, t_list **stack_b, int c);
+void sort_5(t_list **stack_a, t_list **stack_b, int c);
+int min(t_list *s);
 #endif

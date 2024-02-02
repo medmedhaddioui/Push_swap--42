@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   actions1.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/31 17:29:57 by mel-hadd          #+#    #+#             */
+/*   Updated: 2024/01/31 21:29:04 by mel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "push_swap.h"
 
 void	sa(t_list **stack_a, int i)
@@ -33,8 +46,8 @@ void	sb(t_list **stack_b, int i)
 void	ss(t_list **stack_a, t_list **stack_b, int i)
 {
 	i = 1;
-	sa(&(*stack_a), i);
-	sb(&(*stack_b), i);
+	sa(stack_a, i);
+	sb(stack_b, i);
 	if (i == 1)
 		write(1, "ss\n", 3);
 }
