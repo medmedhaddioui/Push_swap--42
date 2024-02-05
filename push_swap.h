@@ -27,7 +27,6 @@ void rrb(t_list **stack_a, int i);
 void rrr(t_list **stack_a,t_list ** stack_b, int i);
 void pa(t_list **stack_a, t_list **stack_b);
 void pb(t_list **stack_a, t_list **stack_b);
-// void	parsing(char *av);
 void	ft_exit(void);
 void ft_free(char **arr);
 void ft_putstr(char *s);
@@ -42,10 +41,11 @@ void sort_2(t_list **stack_a);
 void sort_3(t_list **stack_a);
 void sort_4 (t_list **stack_a, t_list **stack_b, int c);
 void sort_5(t_list **stack_a, t_list **stack_b, int c);
-void    sort_100(t_list **stack_a, t_list **stack_b,int c);
+void sort_100(t_list **stack_a, t_list **stack_b,int c);
 int min(t_list *s);
 int max (t_list *s);
 int *ft_copy(t_list *stack_a, int len);
-int	get_index(int nb, t_list *stack_a);
+int	get_index(int *arr, int len, int nb);
+int *ft_sort(int *arr,int len);
 
 #endif
