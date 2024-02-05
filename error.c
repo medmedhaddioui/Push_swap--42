@@ -6,16 +6,16 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:13 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/01/31 17:30:14 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:22:02 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
-void parsing(char *av)
-{
-	num_arg(av);
-}
+// void parsing(char *av)
+// {
+// 	num_arg(av);
+// }
 void	num_arg(char *s)
 {
 	int i;

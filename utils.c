@@ -6,10 +6,9 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:35 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/01/31 17:30:36 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/02 17:00:10 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -33,7 +32,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 }
 int	ft_lstsize(t_list *lst)
 {
-	int		count;
+	int	count;
 
 	count = 0;
 	if (lst == NULL)
@@ -45,33 +44,25 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(int *))
 {
+	t_list	*ptr;
 	t_list	*tmp;
 
-	if (lst == NULL)
-		return (0);
-	tmp = lst;
-	while (tmp->next != NULL)
+	if (!lst || !*lst || !del)
+		return ;
+	ptr = *lst;
+	while (ptr != NULL)
 	{
-		tmp = tmp->next;
+		tmp = ptr->next;
+		del(&(ptr->content));
+		free(ptr);
+		ptr = tmp;
 	}
-	return (tmp);
+	*lst = NULL;
 }
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	del(int *content)
 {
-	t_list	*tmp;
-
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	tmp = ft_lstlast(*lst);
-	tmp->next = new;
+	free(content);
+	return ;
 }
-
-

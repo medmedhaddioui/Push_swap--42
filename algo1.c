@@ -6,12 +6,16 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:29:51 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/01 20:49:57 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:23:33 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+void sort_2(t_list **stack_a)
+{
+    if ((*stack_a)->content > (*stack_a)->next->content)
+        sa(stack_a,0);
+}
 void	sort_3(t_list **stack_a)
 {
 	if (((*stack_a)->content > (*stack_a)->next->content)
