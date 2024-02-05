@@ -46,5 +46,6 @@ void    sort_100(t_list **stack_a, t_list **stack_b,int c);
 int min(t_list *s);
 int max (t_list *s);
 int *ft_copy(t_list *stack_a, int len);
+int	get_index(t_list *stack_a);
 
 #endif

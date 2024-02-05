@@ -6,18 +6,17 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:24:49 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/05 17:21:56 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:34:25 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 int	get_index(t_list *stack_a)
 {
 	int	index;
 
 	index = 0;
-	while (stack_a && )
+	while (stack_a)
 	{
 		if (stack_a->content == min(stack_a)) 
 			break ;
@@ -60,22 +59,13 @@ int *ft_copy(t_list *stack_a, int len)
 	return arr;
 
 }
-int index_min(t_list *s)
-{
-    int index;
-    index = 0;
-    while (s)
-    {
-        if (s->content < min)
-            index++;
-        s = s->next;
-    }
-    return index;
-}
+
 void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 {
 	int *arr = malloc(sizeof(int) * c);
 	arr = ft_copy(*stack_a, c);
-	int index_a = get_index(*stack_a);
+	int index_a;
+	index_a = get_index(*stack_a);
+	printf("%d\n",index_a);
 	(void)stack_b;
 }
