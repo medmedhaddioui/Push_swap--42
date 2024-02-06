@@ -6,11 +6,9 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:04 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/01/31 21:29:30 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/06 23:28:51 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
@@ -24,7 +22,6 @@ void	rr(t_list **stack_a, t_list **stack_b, int i)
 }
 void	rra(t_list **stack_a, int i)
 {
-
 	t_list	*tmp;
 	t_list	*hold;
 
@@ -42,7 +39,6 @@ void	rra(t_list **stack_a, int i)
 }
 void	rrb(t_list **stack_b, int i)
 {
-
 	t_list	*tmp;
 	t_list	*hold;
 
@@ -58,11 +54,11 @@ void	rrb(t_list **stack_b, int i)
 	if (i == 0)
 		write(1, "rrb\n", 4);
 }
-void rrr(t_list **stack_a,t_list ** stack_b, int i)
+void	rrr(t_list **stack_a, t_list **stack_b, int i)
 {
 	i = 1;
-	rra(stack_a,i);
-	rra(stack_b,i);
+	rra(stack_a, i);
+	rra(stack_b, i);
 	if (i == 1)
-		write(1,"rrr\n",4);
+		write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/04 16:08:17 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/06 23:28:15 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,18 @@ int	main(int ac, char **av)
 	}
 	dup_arg(stack_a);
 	sort_size(&stack_a, &stack_b);
-	printf("---stack_a---\n");
-	while (stack_a)
-	{
-		printf("%d\n", stack_a->content);
-		stack_a = stack_a->next;
-	}
-	printf("---stack_b---\n");
-	while (stack_b)
-	{
-		printf("%d\n", stack_b->content);
-		stack_b = stack_b->next;
-	}
+	// printf("---stack_a---\n");
+	// while (stack_a)
+	// {
+	// 	printf("%d\n", stack_a->content);
+	// 	stack_a = stack_a->next;
+	// }
+	// printf("---stack_b---\n");
+	// while (stack_b)
+	// {
+	// 	printf("%d\n", stack_b->content);
+	// 	stack_b = stack_b->next;
+	// }
 	return (0);
 }
 
@@ -67,7 +67,10 @@ t_list	*put(char **arr, t_list **stack_a)
 
 void	sort_size(t_list **stack_a, t_list **stack_b)
 {
+	int	re;
 	int	c;
+
+	re = 10;
 	c = ft_lstsize(*stack_a);
 	if (c == 2)
 		sort_2(stack_a);
@@ -76,7 +79,7 @@ void	sort_size(t_list **stack_a, t_list **stack_b)
 	if (c == 4)
 		sort_4(stack_a, stack_b, c);
 	if (c == 5)
-		sort_5(stack_a,stack_b,c);
+		sort_5(stack_a, stack_b, c);
 	if (c > 5 && c <= 100)
-		sort_100(stack_a,stack_b,c);
+		sort_100(stack_a, stack_b, c, re);
 }
