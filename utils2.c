@@ -13,10 +13,9 @@ int	min(t_list *s)
 	}
 	return (min);
 }
-int	max(t_list *s)
+int get_max(t_list *s)
 {
-	int	max;
-
+	int max;
 	max = s->content;
 	while (s)
 	{
@@ -24,20 +23,32 @@ int	max(t_list *s)
 			max = s->content;
 		s = s->next;
 	}
-	return (max);
+	return max;
 }
-// int check_min(t_list *s, int len)
-// {
-//     int min;
-//     int i;
-//     i = 0;
-//     min = s ->content;
-//     while (s && len > i)
-//     {
-//         if (s->content < min)
-//             min = s->content;
-//         s = s->next;
-//         i++;
-//     }
-//     return (min);
-// }
+int	get_index(int *arr, int len, int nb)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (nb == arr[i])
+		{
+			break;
+		}
+		i++;
+	}
+	return (i);
+}
+int get_index_b(t_list *stack_b, int nb)
+{
+	int index = 0 ;
+	while (stack_b)
+	{
+		if (stack_b->content == nb)
+			break;
+		index++;
+		stack_b = stack_b->next;
+	}
+	return index;
+}

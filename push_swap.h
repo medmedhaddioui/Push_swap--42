@@ -8,7 +8,6 @@
 
 typedef struct s_list{
     int content;
-
     struct s_list *next;
 } t_list;
 
@@ -41,11 +40,13 @@ void sort_2(t_list **stack_a);
 void sort_3(t_list **stack_a);
 void sort_4 (t_list **stack_a, t_list **stack_b, int c);
 void sort_5(t_list **stack_a, t_list **stack_b, int c);
-void sort_100(t_list **stack_a, t_list **stack_b,int c, int re );
+void sort_100(t_list **stack_a, t_list **stack_b,int c);
+void sort_500(t_list **stack_a, t_list **stack_b, int c);
 int min(t_list *s);
-int max (t_list *s);
-int *ft_copy(t_list *stack_a, int len);
+int	*ft_copy(t_list *stack_a, int len);
 int	get_index(int *arr, int len, int nb);
 int *ft_sort(int *arr,int len);
-
+void back_a(t_list **stack_a, t_list **stack_b, int c);
+int get_max(t_list *s);
+int get_index_b(t_list *stack_b, int nb);
 #endif

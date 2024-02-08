@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/06 23:28:15 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:08:38 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ t_list	*put(char **arr, t_list **stack_a)
 	while (j > 0)
 	{
 		node = ft_lstnew(ft_atoi(arr[--j]));
-		if (!node)
-			ft_lstclear(&node, del);
 		ft_lstadd_front(&(*stack_a), node);
 	}
 	return (*stack_a);
@@ -67,10 +65,7 @@ t_list	*put(char **arr, t_list **stack_a)
 
 void	sort_size(t_list **stack_a, t_list **stack_b)
 {
-	int	re;
 	int	c;
-
-	re = 10;
 	c = ft_lstsize(*stack_a);
 	if (c == 2)
 		sort_2(stack_a);
@@ -81,5 +76,7 @@ void	sort_size(t_list **stack_a, t_list **stack_b)
 	if (c == 5)
 		sort_5(stack_a, stack_b, c);
 	if (c > 5 && c <= 100)
-		sort_100(stack_a, stack_b, c, re);
+		sort_100(stack_a, stack_b, c);
+	if (c > 100 && c <= 500)
+		sort_500(stack_a,stack_b,c);
 }

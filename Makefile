@@ -8,7 +8,7 @@ OBJ =  $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror  $(SRC) -o $(NAME)
+	gcc -Wall -Wextra -Werror -g3  $(SRC) -o $(NAME)
 
 clean :
 	rm -f $(OBJ)

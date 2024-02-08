@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/01/31 17:30:40 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:12:04 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,13 @@ void ft_free(char **arr)
 		j++;
 	}
 	free(arr);
+}
+void ft_free_stack_a(t_list *stack_a)
+{
+	
+	while (stack_a)
+	{
+		free(stack_a);
+		stack_a= stack_a ->next;
+	}
 }

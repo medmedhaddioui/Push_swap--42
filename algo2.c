@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:24:49 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/06 23:28:03 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:09:31 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,52 +52,97 @@ int	*ft_copy(t_list *stack_a, int len)
 	arr = ft_sort(arr, len);
 	return (arr);
 }
-int	get_index(int *arr, int len, int nb)
+
+void back_a(t_list **stack_a, t_list **stack_b, int size)
 {
-	int	i;
-
+	int i;
 	i = 0;
-	while (i < len)
+	int half;
+	int index_b;
+	int max;
+	while (size > i)
 	{
-		if (nb == arr[i])
+		half = size / 2;
+		max = get_max(*stack_b);
+		index_b = get_index_b(*stack_b,max);
+		
+		if (index_b <= half)
 		{
-			// break ;
-			return (i);
+			while (index_b != 0)
+			{
+				rb(stack_b,0);
+				index_b--;
+			}
 		}
-		i++;
+		else if (index_b > half)
+		{
+			while (index_b != size)
+			{
+				rrb(stack_b,0);
+				index_b++;
+			}
+		}
+		pa(stack_a,stack_b);
+		size--;
 	}
-	return (i);
 }
-
-void	sort_100(t_list **stack_a, t_list **stack_b, int c, int re)
+void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 {
 	int		*arr;
 	int		index_arr;
-	int		t;
-	int		g;
-	t_list	*head;
-
+	int		index;
+	int re;
+	re = 15;
 	arr = ft_copy(*stack_a, c);
-	t = 0;
-	g = c;
-	head = NULL;
-	while (t < g)
+	index = 0;
+	while (index < c)
 	{
-		re = 10;
-		head = *stack_a;
-		index_arr = get_index(arr, c, head->content);
-		if (index_arr < t)
+		
+		index_arr = get_index(arr, c, (*stack_a)->content);
+		if (index_arr < index)
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b, 0);
-			t++;
+			index++;
 		}
-		else if (index_arr <= t + re)
+		else if (index_arr <= index + re)
 		{
 			pb(stack_a, stack_b);
-			t++;
+			index++;
 		}
 		else
 			ra(stack_a, 0);
 	}
+	free(arr);
+	back_a(stack_a,stack_b, c);
+}
+void	sort_500(t_list **stack_a, t_list **stack_b, int c)
+{
+	int		*arr;
+	int		index_arr;
+	int		index;
+	int re;
+
+	arr = ft_copy(*stack_a, c);
+	index = 0;
+	while (index < c)
+	{
+		re = 30;
+		index_arr = get_index(arr, c, (*stack_a)->content);
+		if (index_arr < index)
+		{
+			pb(stack_a, stack_b);
+			rb(stack_b, 0);
+			index++;
+		}
+		else if (index_arr <= index + re)
+		{
+			pb(stack_a, stack_b);
+			index++;
+		}
+		else
+			ra(stack_a, 0);
+	}
+	free(arr);
+	back_a(stack_a,stack_b, c);
 }
