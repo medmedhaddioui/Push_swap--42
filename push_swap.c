@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/08 23:08:38 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:04:10 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	arr = NULL;
+	if (ac == 1)
+		exit(0);
 	i = ac - 1;
 	while (i)
 	{
@@ -30,20 +32,13 @@ int	main(int ac, char **av)
 		ft_free(arr);
 		i--;
 	}
-	dup_arg(stack_a);
+	if (dup_arg(stack_a))
+	{
+		ft_lstclear(&stack_a);
+		ft_exit();
+	}
 	sort_size(&stack_a, &stack_b);
-	// printf("---stack_a---\n");
-	// while (stack_a)
-	// {
-	// 	printf("%d\n", stack_a->content);
-	// 	stack_a = stack_a->next;
-	// }
-	// printf("---stack_b---\n");
-	// while (stack_b)
-	// {
-	// 	printf("%d\n", stack_b->content);
-	// 	stack_b = stack_b->next;
-	// }
+	ft_lstclear(&stack_a);
 	return (0);
 }
 
@@ -54,11 +49,23 @@ t_list	*put(char **arr, t_list **stack_a)
 
 	j = 0;
 	while (arr[j])
-		num_arg(arr[j++]);
+	{
+		if (num_arg(arr[j]))
+		{
+			ft_free(arr);
+			ft_exit();
+		}
+		j++;
+	}
 	while (j > 0)
 	{
 		node = ft_lstnew(ft_atoi(arr[--j]));
-		ft_lstadd_front(&(*stack_a), node);
+		if (!node)
+		{
+			free(node);
+			ft_exit();
+		}
+		ft_lstadd_front(stack_a, node);
 	}
 	return (*stack_a);
 }

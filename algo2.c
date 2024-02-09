@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:24:49 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/08 23:09:31 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:33:34 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	*ft_copy(t_list *stack_a, int len)
 
 	i = 0;
 	arr = malloc(sizeof(int) * len);
+	if (!arr)
+		return NULL;
 	while (stack_a)
 	{
 		arr[i] = stack_a->content;
@@ -94,6 +96,11 @@ void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 	int re;
 	re = 15;
 	arr = ft_copy(*stack_a, c);
+	if (!arr)
+	{
+		free(arr);
+		exit(1);
+	}
 	index = 0;
 	while (index < c)
 	{
@@ -124,6 +131,11 @@ void	sort_500(t_list **stack_a, t_list **stack_b, int c)
 	int re;
 
 	arr = ft_copy(*stack_a, c);
+	if (!arr)
+	{
+		free(arr);
+		exit(1);
+	}
 	index = 0;
 	while (index < c)
 	{

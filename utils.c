@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:35 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/02 17:00:10 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:06:14 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,16 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-void	ft_lstclear(t_list **lst, void (*del)(int *))
+void ft_lstclear(t_list **lst)
 {
-	t_list	*ptr;
-	t_list	*tmp;
-
-	if (!lst || !*lst || !del)
-		return ;
-	ptr = *lst;
-	while (ptr != NULL)
+	t_list *tmp;
+	tmp = *lst;
+	while (*lst)
 	{
-		tmp = ptr->next;
-		del(&(ptr->content));
-		free(ptr);
-		ptr = tmp;
+		tmp = (*lst)->next;
+		// free((*lst)->content);
+		free(*lst);
+		*lst = tmp;
 	}
-	*lst = NULL;
 }
-void	del(int *content)
-{
-	free(content);
-	return ;
-}
+
