@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/09 19:04:10 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:47:46 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,7 @@ int	main(int ac, char **av)
 		ft_free(arr);
 		i--;
 	}
-	if (dup_arg(stack_a))
-	{
-		ft_lstclear(&stack_a);
-		ft_exit();
-	}
+	dup_arg(stack_a);
 	sort_size(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
 	return (0);
@@ -63,6 +59,7 @@ t_list	*put(char **arr, t_list **stack_a)
 		if (!node)
 		{
 			free(node);
+			ft_lstclear(stack_a);
 			ft_exit();
 		}
 		ft_lstadd_front(stack_a, node);
@@ -73,6 +70,7 @@ t_list	*put(char **arr, t_list **stack_a)
 void	sort_size(t_list **stack_a, t_list **stack_b)
 {
 	int	c;
+
 	c = ft_lstsize(*stack_a);
 	if (c == 2)
 		sort_2(stack_a);
@@ -85,5 +83,5 @@ void	sort_size(t_list **stack_a, t_list **stack_b)
 	if (c > 5 && c <= 100)
 		sort_100(stack_a, stack_b, c);
 	if (c > 100 && c <= 500)
-		sort_500(stack_a,stack_b,c);
+		sort_500(stack_a, stack_b, c);
 }

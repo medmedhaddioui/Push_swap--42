@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:04 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/06 23:28:51 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:48:43 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	rr(t_list **stack_a, t_list **stack_b, int i)
 	if (i == 1)
 		write(1, "rr\n", 3);
 }
+
 void	rra(t_list **stack_a, int i)
 {
 	t_list	*tmp;
@@ -37,6 +38,7 @@ void	rra(t_list **stack_a, int i)
 	if (i == 0)
 		write(1, "rra\n", 4);
 }
+
 void	rrb(t_list **stack_b, int i)
 {
 	t_list	*tmp;
@@ -54,6 +56,7 @@ void	rrb(t_list **stack_b, int i)
 	if (i == 0)
 		write(1, "rrb\n", 4);
 }
+
 void	rrr(t_list **stack_a, t_list **stack_b, int i)
 {
 	i = 1;

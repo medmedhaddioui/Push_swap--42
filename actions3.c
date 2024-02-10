@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:08 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/06 23:28:47 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:48:54 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	ft_lstadd_front(stack_a, first_node);
 	write(1, "pa\n", 3);
 }
+
 void	pb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*first_node;

@@ -6,10 +6,9 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:29:57 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/01/31 21:29:04 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:48:24 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -28,6 +27,7 @@ void	sa(t_list **stack_a, int i)
 	if (i == 0)
 		write(1, "sa\n", 3);
 }
+
 void	sb(t_list **stack_b, int i)
 {
 	t_list	*first;
@@ -43,6 +43,7 @@ void	sb(t_list **stack_b, int i)
 	if (i == 0)
 		write(1, "sb\n", 3);
 }
+
 void	ss(t_list **stack_a, t_list **stack_b, int i)
 {
 	i = 1;
@@ -51,6 +52,7 @@ void	ss(t_list **stack_a, t_list **stack_b, int i)
 	if (i == 1)
 		write(1, "ss\n", 3);
 }
+
 void	ra(t_list **stack_a, int i)
 {
 	t_list	*second_node;
@@ -68,6 +70,7 @@ void	ra(t_list **stack_a, int i)
 	if (i == 0)
 		write(1, "ra\n", 3);
 }
+
 void	rb(t_list **stack_b, int i)
 {
 	t_list	*second_node;

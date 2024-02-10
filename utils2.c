@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/10 15:56:37 by mel-hadd          #+#    #+#             */
+/*   Updated: 2024/02/10 15:56:39 by mel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	min(t_list *s)
@@ -13,9 +25,11 @@ int	min(t_list *s)
 	}
 	return (min);
 }
-int get_max(t_list *s)
+
+int	get_max(t_list *s)
 {
-	int max;
+	int	max;
+
 	max = s->content;
 	while (s)
 	{
@@ -23,8 +37,9 @@ int get_max(t_list *s)
 			max = s->content;
 		s = s->next;
 	}
-	return max;
+	return (max);
 }
+
 int	get_index(int *arr, int len, int nb)
 {
 	int	i;
@@ -34,21 +49,24 @@ int	get_index(int *arr, int len, int nb)
 	{
 		if (nb == arr[i])
 		{
-			break;
+			break ;
 		}
 		i++;
 	}
 	return (i);
 }
-int get_index_b(t_list *stack_b, int nb)
+
+int	get_index_b(t_list *stack_b, int nb)
 {
-	int index = 0 ;
+	int	index;
+
+	index = 0;
 	while (stack_b)
 	{
 		if (stack_b->content == nb)
-			break;
+			break ;
 		index++;
 		stack_b = stack_b->next;
 	}
-	return index;
+	return (index);
 }

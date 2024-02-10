@@ -6,12 +6,12 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:23 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/01/31 17:30:24 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 15:50:05 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
+
 static int	ft_free_memory(char **s, int count)
 {
 	int	i;
