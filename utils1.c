@@ -6,16 +6,16 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:56:11 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:34:49 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *nptr)
+long long ft_atoi(const char *nptr, t_list **stack_a)
 {
 	int	sign;
-	int	result;
+	long long result;
 
 	sign = 1;
 	result = 0;
@@ -32,7 +32,13 @@ int	ft_atoi(const char *nptr)
 		result = result * 10 + (*nptr - '0');
 		nptr++;
 	}
-	return (sign * result);
+	result = result * sign;
+	if (result >= INT_MAX)
+	{
+		ft_lstclear(stack_a);
+		ft_exit();
+	}
+	return (result);
 }
 
 void	ft_exit(void)

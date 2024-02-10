@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:56:37 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:56:39 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:59:11 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ int	get_index(int *arr, int len, int nb)
 	while (i < len)
 	{
 		if (nb == arr[i])
-		{
-			break ;
-		}
+			break;
 		i++;
 	}
 	return (i);

@@ -6,13 +6,13 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:13 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:47:38 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:26:13 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	dup_arg(t_list *stack_a)
+void	dup_check(t_list *stack_a)
 {
 	t_list	*second;
 
@@ -37,7 +37,7 @@ int	num_arg(char *s)
 	int	i;
 
 	i = 0;
-	if (s[i] == '-' || s[i] == '+')
+	if ((s[i] == '-' || s[i] == '+') && s[i + 1])
 		i++;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:20 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:52:40 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:00:18 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+#include  <limits.h>
 
 typedef struct s_list
 {
@@ -27,7 +28,7 @@ typedef struct s_list
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
-int					ft_atoi(const char *nptr);
+long long 			ft_atoi(const char *nptr, t_list **stack_a);
 void				sa(t_list **stack_a, int i);
 void				sb(t_list **stack_b, int i);
 void				ss(t_list **stack_a, t_list **stack_b, int i);
@@ -43,7 +44,8 @@ void				ft_exit(void);
 void				ft_free(char **arr);
 void				ft_putstr(char *s);
 int					num_arg(char *av);
-void				dup_arg(t_list *stack_a);
+void				dup_check(t_list *stack_a);
+int				sort_check(t_list *stack_a);
 char				**ft_split(char const *s, char c);
 t_list				*put(char **arr, t_list **stack_a);
 void				ft_lstclear(t_list **lst);

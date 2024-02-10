@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:24:49 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:49:36 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:17:34 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 	free(arr);
 	back_a(stack_a, stack_b, c);
 }
+
 void	sort_500(t_list **stack_a, t_list **stack_b, int c)
 {
 	int	*arr;
