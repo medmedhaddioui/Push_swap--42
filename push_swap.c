@@ -12,6 +12,11 @@
 
 #include "push_swap.h"
 
+void free_stack(t_list **stack_a)
+{
+	ft_lstclear(stack_a);
+	ft_exit();
+}
 int sort_check(t_list *stack_a)
 {
 	t_list	*second;
@@ -56,26 +61,22 @@ t_list	*put(char **arr, t_list **stack_a)
 	int		j;
 
 	j = 0;
+	if (!arr[j])
+		free_stack_arr(stack_a,arr);
 	while (arr[j])
 	{
 		if (num_arg(arr[j]))
-		{
-			ft_free(arr);
-			ft_exit();
-		}
+			free_stack_arr(stack_a,arr);
 		j++;
 	}
 	while (j > 0)
 	{
-		node = ft_lstnew(ft_atoi(arr[--j],stack_a));
+		node = ft_lstnew(ft_atoi(arr[--j], stack_a , arr));
 		if (!node)
-		{
-			free(node);
-			ft_lstclear(stack_a);
-			ft_exit();
-		}
+			free_stack_arr(stack_a,arr);
 		ft_lstadd_front(stack_a, node);
 	}
+	
 	return (*stack_a);
 }
 int	main(int ac, char **av)
@@ -98,9 +99,14 @@ int	main(int ac, char **av)
 		ft_free(arr);
 		i--;
 	}
-	dup_check(stack_a);
+	if (!dup_check(stack_a))
+		free_stack(&stack_a);
 	sort_size(&stack_a, &stack_b);
+	// while (stack_a)
+	// {
+	// 	printf("%d\n",stack_a->content);
+	// 	stack_a = stack_a->next;
+	// }
 	ft_lstclear(&stack_a);
-
 	return (0);
 }

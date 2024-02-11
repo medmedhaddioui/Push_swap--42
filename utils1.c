@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-long long ft_atoi(const char *nptr, t_list **stack_a)
+long long ft_atoi(const char *nptr, t_list **stack_a, char **arr)
 {
 	int	sign;
 	long long result;
@@ -34,10 +34,7 @@ long long ft_atoi(const char *nptr, t_list **stack_a)
 	}
 	result = result * sign;
 	if (result > INT_MAX || result < INT_MIN)
-	{
-		ft_lstclear(stack_a);
-		ft_exit();
-	}
+		free_stack_arr(stack_a,arr);
 	return (result);
 }
 
@@ -68,12 +65,9 @@ void	ft_free(char **arr)
 	}
 	free(arr);
 }
-
-void	ft_free_stack_a(t_list *stack_a)
+void free_stack_arr(t_list **stack_a, char **arr)
 {
-	while (stack_a)
-	{
-		free(stack_a);
-		stack_a = stack_a->next;
-	}
+	ft_lstclear(stack_a);
+	ft_free(arr);
+	ft_exit();
 }

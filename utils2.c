@@ -68,3 +68,4 @@ int	get_index_b(t_list *stack_b, int nb)
 	}
 	return (index);
 }
+

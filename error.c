@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	dup_check(t_list *stack_a)
+int	dup_check(t_list *stack_a)
 {
 	t_list	*second;
 
@@ -22,14 +22,12 @@ void	dup_check(t_list *stack_a)
 		while (second)
 		{
 			if (stack_a->content == second->content)
-			{
-				ft_lstclear(&stack_a);
-				ft_exit();
-			}
+				return 0;
 			second = second->next;
 		}
 		stack_a = stack_a->next;
 	}
+	return 1;
 }
 
 int	num_arg(char *s)

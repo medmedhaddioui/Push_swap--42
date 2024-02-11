@@ -71,19 +71,13 @@ void	back_a(t_list **stack_a, t_list **stack_b, int size)
 		index_b = get_index_b(*stack_b, max);
 		if (index_b <= half)
 		{
-			while (index_b != 0)
-			{
+			while (index_b-- != 0)
 				rb(stack_b, 0);
-				index_b--;
-			}
 		}
 		else if (index_b > half)
 		{
-			while (index_b != size)
-			{
+			while (index_b++ != size)
 				rrb(stack_b, 0);
-				index_b++;
-			}
 		}
 		pa(stack_a, stack_b);
 		size--;
@@ -95,9 +89,6 @@ void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 	int	*arr;
 	int	index_arr;
 	int	index;
-	int	re;
-
-	re = 15;
 	arr = ft_copy(*stack_a, c);
 	if (!arr)
 	{
@@ -108,56 +99,27 @@ void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 	while (index < c)
 	{
 		index_arr = get_index(arr, c, (*stack_a)->content);
-		if (index_arr < index)
-		{
-			pb(stack_a, stack_b);
-			rb(stack_b, 0);
-			index++;
-		}
-		else if (index_arr <= index + re)
-		{
-			pb(stack_a, stack_b);
-			index++;
-		}
-		else
-			ra(stack_a, 0);
+		index = push_check_100(index_arr,index,stack_a,stack_b);
 	}
 	free(arr);
 	back_a(stack_a, stack_b, c);
 }
-
-void	sort_500(t_list **stack_a, t_list **stack_b, int c)
+int push_check_100(int index_arr,int index, t_list **stack_a,t_list **stack_b)
 {
-	int	*arr;
-	int	index_arr;
-	int	index;
-	int	re;
-
-	arr = ft_copy(*stack_a, c);
-	if (!arr)
+	int re;
+	re = 15;
+	if (index_arr < index)
 	{
-		free(arr);
-		exit(1);
-	}
-	index = 0;
-	while (index < c)
-	{
-		re = 30;
-		index_arr = get_index(arr, c, (*stack_a)->content);
-		if (index_arr < index)
-		{
 			pb(stack_a, stack_b);
 			rb(stack_b, 0);
 			index++;
-		}
-		else if (index_arr <= index + re)
-		{
+	}
+	else if (index_arr <= index + re)
+	{
 			pb(stack_a, stack_b);
 			index++;
-		}
-		else
-			ra(stack_a, 0);
 	}
-	free(arr);
-	back_a(stack_a, stack_b, c);
+	else
+		ra(stack_a, 0);
+	return index;
 }
