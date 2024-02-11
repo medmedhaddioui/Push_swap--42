@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 18:34:49 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/10 21:05:20 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ long long ft_atoi(const char *nptr, t_list **stack_a)
 		nptr++;
 	}
 	result = result * sign;
-	if (result >= INT_MAX)
+	if (result > INT_MAX || result < INT_MIN)
 	{
 		ft_lstclear(stack_a);
 		ft_exit();
