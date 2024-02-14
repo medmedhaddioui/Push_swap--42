@@ -16,7 +16,7 @@ int push_check_500(int index_arr,int index, t_list **stack_a,t_list **stack_b)
 			index++;
 	}
 	else
-		ra(stack_a, 0);
+		ra(stack_a, 0); 
 	return index;
 }
 
