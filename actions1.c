@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions1.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:29:57 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:48:24 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/15 00:48:31 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	sb(t_list **stack_b, int i)
 
 void	ss(t_list **stack_a, t_list **stack_b, int i)
 {
-	i = 1;
 	sa(stack_a, i);
 	sb(stack_b, i);
 	if (i == 1)

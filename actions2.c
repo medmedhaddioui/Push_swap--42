@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:04 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:48:43 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/15 00:22:28 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	rr(t_list **stack_a, t_list **stack_b, int i)
 {
-	i = 1;
 	ra(stack_a, i);
-	ra(stack_b, i);
+	rb(stack_b, i);
 	if (i == 1)
 		write(1, "rr\n", 3);
 }
@@ -59,9 +58,8 @@ void	rrb(t_list **stack_b, int i)
 
 void	rrr(t_list **stack_a, t_list **stack_b, int i)
 {
-	i = 1;
 	rra(stack_a, i);
-	rra(stack_b, i);
+	rrb(stack_b, i);
 	if (i == 1)
 		write(1, "rrr\n", 4);
 }
