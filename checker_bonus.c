@@ -6,42 +6,30 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:25:21 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/13 23:43:43 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:30:39 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "checker_bonus.h"
-void ft_read_inst(t_list *stack_a)
+
+
+
+void instruct_cmp (char *str, t_list *stack_a, t_list *stack_a)
+{
+	
+}
+void ft_read_inst(t_list *stack_a, t_list *stack_b)
 {
 	char *str;
 	str = get_next_line(0);
-	printf("%s",str);
-		
-}
-void free_stack(t_list **stack_a)
-{
-	ft_lstclear(stack_a);
-	ft_exit();
-}
-int sort_check(t_list *stack_a)
-{
-	t_list	*second;
-
-	while (stack_a->next)
+	while (str)
 	{
-		second = stack_a->next;
-		while (second)
-		{
-			if (stack_a->content > second->content)
-				return 0;
-			second = second->next;
-		}
-		stack_a = stack_a->next;
+		instruct_cmp(str, stack_a, stack_b);
+		printf("%s\n", str); // Print the string here
+		str = get_next_line(0);
 	}
-	return 1;
 }
-
 
 t_list	*put(char **arr, t_list **stack_a)
 {

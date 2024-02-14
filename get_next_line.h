@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 14:41:16 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/13 23:45:25 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/14 15:11:30 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
+#  define BUFFER_SIZE 10
 # endif
 
 # include <fcntl.h>

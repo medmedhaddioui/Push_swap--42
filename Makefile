@@ -7,7 +7,7 @@ SRC = push_swap.c utils.c utils1.c actions1.c actions2.c \
 OBJ = $(SRC:.c=.o)
 
 BSRC = checker_bonus.c get_next_line.c get_next_line_utils.c \
-		 utils.c utils1.c  error.c ft_split.c    \
+		utils.c utils1.c  error.c ft_split.c   \
 
 BOBJ = $(BSRC:.c=.o)
 
