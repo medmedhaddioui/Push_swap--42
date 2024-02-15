@@ -6,7 +6,7 @@
 /*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:58:26 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 00:15:06 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/15 15:08:59 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 #include "push_swap.h"
 #include "get_next_line.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-void instruct_cmp (char *str, t_list **stack_a, t_list **stack_b);
-void ft_read_inst(t_list *stack_a, t_list *stack_b, int *arr);
-int ft_sort_stack(t_list *stack_a);
+int instruct_cmp(char *str, t_list **stack_a, t_list **stack_b);
 void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len);
+void ft_read_inst(t_list *stack_a, t_list *stack_b);
+t_list *put(char **arr, t_list **stack_a);
+void free_stacks(t_list **stack_a, t_list **stack_b);
+int ft_sort_stack(t_list *stack_a);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 void	pa(t_list **stack_a, t_list **stack_b);
 void	pb(t_list **stack_a, t_list **stack_b);
 

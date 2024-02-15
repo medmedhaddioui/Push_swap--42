@@ -23,7 +23,7 @@ $(NAME) : $(OBJ)
 bonus : $(B_NAME)
 
 $(B_NAME) :$(BOBJ) 
-	cc -Wall -Wextra -Werror $(BOBJ) -o $(B_NAME)
+	cc -Wall -Wextra -Werror  $(BOBJ) -o $(B_NAME)
 
 clean:
 	rm -rf $(OBJ) $(BOBJ)

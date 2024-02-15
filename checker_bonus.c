@@ -6,15 +6,14 @@
 /*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:25:21 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 00:48:13 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/15 15:38:15 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void instruct_cmp(char *str, t_list **stack_a, t_list **stack_b)
+int instruct_cmp(char *str, t_list **stack_a, t_list **stack_b)
 {
-	
 	if (!ft_strncmp(str, "sa\n", 3))
     	sa(stack_a, 2);
 	else if (!ft_strncmp(str, "sb\n", 3))
@@ -38,7 +37,8 @@ void instruct_cmp(char *str, t_list **stack_a, t_list **stack_b)
 	else if (!ft_strncmp(str, "pb\n", 3))
     	pb(stack_a, stack_b);
 	else
-		ft_exit();
+		return 0;
+	return 1;
 }
 void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len)
 {
@@ -47,7 +47,8 @@ void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len)
 	if (stack_b)
 	{
 		write(1,"KO\n",3);
-		exit(1);
+		// exit(0);
+		return ;
 	}
 	while (i < len)
 	{
@@ -59,23 +60,32 @@ void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len)
 		else
 		{
 			write(1,"KO\n",3);
-			exit(1);
+			// exit(1);
+			return ;
 		}
 	}
 	write(1,"OK\n",3);
 }
 
-void ft_read_inst(t_list *stack_a, t_list *stack_b, int *arr)
+void ft_read_inst(t_list *stack_a, t_list *stack_b)
 {
+	int *arr;
 	char *str;
-	str =  get_next_line(0);
-	while (str)
+	while (str = get_next_line(0))
 	{
-		instruct_cmp(str, &stack_a, &stack_b);
+		if ((instruct_cmp(str, &stack_a, &stack_b)) == 0)
+		{
+			free_stacks(&stack_a,&stack_b);
+			free(str);
+			ft_exit();
+		}
 		free(str);
 		str = get_next_line(0);
 	}
+	free(str);
+	arr = ft_copy(stack_a,ft_lstsize(stack_a));
 	ft_check_sorted(arr,stack_a,stack_b, ft_lstsize(stack_a));
+	free(arr);
 }
 
 t_list *put(char **arr, t_list **stack_a)
@@ -123,10 +133,11 @@ int main(int ac, char **av)
 		i--;
 	}
 	if (!dup_check(stack_a))
-		free_stack(&stack_a);
-	int *tmp;
-	tmp = ft_copy(stack_a,ft_lstsize(stack_a));
-	ft_read_inst(stack_a, stack_b, tmp);
-	ft_lstclear(&stack_a);
+	{
+		ft_lstclear(&stack_a);
+		ft_exit();
+	}
+	ft_read_inst(stack_a, stack_b);
+	free_stacks(&stack_a,&stack_b);
 	return (0);
 }

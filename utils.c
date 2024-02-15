@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:35 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 15:51:37 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/15 15:41:21 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	ft_lstclear(t_list **lst)
 {
 	t_list	*tmp;
 
-	tmp = *lst;
 	while (*lst)
 	{
 		tmp = (*lst)->next;

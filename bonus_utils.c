@@ -6,16 +6,17 @@
 /*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:10:36 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/14 23:20:51 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/15 15:39:34 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-void free_stack(t_list **stack_a)
+void free_stacks(t_list **stack_a, t_list **stack_b)
 {
+	
 	ft_lstclear(stack_a);
-	ft_exit();
+	ft_lstclear(stack_b);
 }
 int ft_sort_stack(t_list *stack_a)
 {
