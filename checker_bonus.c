@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:25:21 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 15:38:15 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/15 23:29:17 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,10 @@ void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len)
 	if (stack_b)
 	{
 		write(1,"KO\n",3);
-		// exit(0);
-		return ;
+		free_stacks(&stack_a,&stack_b);
+			free (arr);
+			exit(1);
+		
 	}
 	while (i < len)
 	{
@@ -60,18 +62,23 @@ void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len)
 		else
 		{
 			write(1,"KO\n",3);
-			// exit(1);
-			return ;
+			free_stacks(&stack_a,&stack_b);
+			free (arr);
+			exit(1);	
 		}
 	}
 	write(1,"OK\n",3);
+	free_stacks(&stack_a,&stack_b);
+	free (arr);
+	exit(0);
 }
 
 void ft_read_inst(t_list *stack_a, t_list *stack_b)
 {
 	int *arr;
 	char *str;
-	while (str = get_next_line(0))
+	str = get_next_line(0);
+	while (str)
 	{
 		if ((instruct_cmp(str, &stack_a, &stack_b)) == 0)
 		{
@@ -82,7 +89,6 @@ void ft_read_inst(t_list *stack_a, t_list *stack_b)
 		free(str);
 		str = get_next_line(0);
 	}
-	free(str);
 	arr = ft_copy(stack_a,ft_lstsize(stack_a));
 	ft_check_sorted(arr,stack_a,stack_b, ft_lstsize(stack_a));
 	free(arr);
@@ -138,6 +144,6 @@ int main(int ac, char **av)
 		ft_exit();
 	}
 	ft_read_inst(stack_a, stack_b);
-	free_stacks(&stack_a,&stack_b);
+
 	return (0);
 }
