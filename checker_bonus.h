@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:58:26 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 22:03:01 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/16 00:18:43 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int instruct_cmp(char *str, t_list **stack_a, t_list **stack_b);
 void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len);
-void ft_read_inst(t_list *stack_a, t_list *stack_b);
+void ft_read_inst(t_list **stack_a, t_list **stack_b);
 t_list *put(char **arr, t_list **stack_a);
 void free_stacks(t_list **stack_a, t_list **stack_b);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);

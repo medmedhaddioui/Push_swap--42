@@ -6,7 +6,7 @@
 /*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 00:23:52 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/16 04:04:47 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sort_size(t_list **stack_a, t_list **stack_b)
 		sort_5(stack_a, stack_b, c);
 	if (c > 5 && c <= 100)
 		sort_100(stack_a, stack_b, c);
-	if (c > 100 && c <= 500)
+	if (c > 100)
 		sort_500(stack_a, stack_b, c);
 }
 t_list	*put(char **arr, t_list **stack_a)

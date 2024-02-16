@@ -16,14 +16,15 @@ BOBJ = $(BSRC:.c=.o)
 all: $(NAME) 
 
 
+CFLAG =  -Wall -Wextra -Werror
 
 $(NAME) : $(OBJ)
-	cc -Wall -Wextra -Werror -g3 $(OBJ) -o $(NAME) 
+	cc $(CFLAG)  $(OBJ) -o $(NAME) 
 
 bonus : $(B_NAME)
 
 $(B_NAME) :$(BOBJ) 
-	cc -Wall -Wextra -Werror -g3 $(BOBJ) -o $(B_NAME) 
+	cc $(CFLAG)  $(BOBJ) -o $(B_NAME) 
 
 clean:
 	rm -rf $(OBJ) $(BOBJ)
