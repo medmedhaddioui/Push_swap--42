@@ -15,7 +15,6 @@ BOBJ = $(BSRC:.c=.o)
 
 all: $(NAME) 
 
-
 CFLAG =  -Wall -Wextra -Werror
 
 $(NAME) : $(OBJ)
@@ -32,7 +31,7 @@ clean:
 fclean: clean
 	rm -rf $(NAME) $(B_NAME)
 
-re : fclean all bonus
+re : fclean all
 
 .PHONY: all bonus clean fclean re
 

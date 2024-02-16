@@ -6,7 +6,7 @@
 /*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:25:21 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/16 00:18:27 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/16 23:02:25 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void ft_check_sorted (int *arr, t_list *stack_a, t_list *stack_b,int len)
 			stack_a = stack_a->next;
 		}
 		else
-		{
+		{	
 			write(1,"KO\n",3);
 			return ;	
 		}

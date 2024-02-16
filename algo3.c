@@ -3,7 +3,7 @@
 int push_check_500(int index_arr,int index, t_list **stack_a,t_list **stack_b)
 {
 	int re;
-    re = 30;
+    re = 35;
 	if (index_arr < index)
 	{
 			pb(stack_a, stack_b);
