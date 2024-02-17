@@ -1,23 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo3.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/17 14:33:33 by mel-hadd          #+#    #+#             */
+/*   Updated: 2024/02/17 14:33:35 by mel-hadd         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int push_check_500(int index_arr,int index, t_list **stack_a,t_list **stack_b)
+int	push_check_500(int index_arr, int index, t_list **stack_a, t_list **stack_b)
 {
-	int re;
-    re = 35;
+	int	re;
+
+	re = 35;
 	if (index_arr < index)
 	{
-			pb(stack_a, stack_b);
-			rb(stack_b, 0);
-			index++;
+		pb(stack_a, stack_b);
+		rb(stack_b, 0);
+		index++;
 	}
 	else if (index_arr <= index + re)
 	{
-			pb(stack_a, stack_b);
-			index++;
+		pb(stack_a, stack_b);
+		index++;
 	}
 	else
-		ra(stack_a, 0); 
-	return index;
+		ra(stack_a, 0);
+	return (index);
 }
 
 void	sort_500(t_list **stack_a, t_list **stack_b, int c)
@@ -34,9 +47,9 @@ void	sort_500(t_list **stack_a, t_list **stack_b, int c)
 	}
 	index = 0;
 	while (index < c)
-    {
+	{
 		index_arr = get_index(arr, c, (*stack_a)->content);
-		index = push_check_500(index_arr,index,stack_a,stack_b);
+		index = push_check_500(index_arr, index, stack_a, stack_b);
 	}
 	free(arr);
 	back_a(stack_a, stack_b, c);

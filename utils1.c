@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 00:56:10 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/17 14:35:29 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long ft_atoi(const char *nptr, t_list **stack_a, char **arr)
+long long	ft_atoi(const char *nptr, t_list **stack_a, char **arr)
 {
-	int	sign;
-	long long result;
+	int			sign;
+	long long	result;
 
 	sign = 1;
 	result = 0;
@@ -34,7 +34,7 @@ long long ft_atoi(const char *nptr, t_list **stack_a, char **arr)
 	}
 	result = result * sign;
 	if (result > INT_MAX || result < INT_MIN)
-		free_stack_arr(stack_a,arr);
+		free_stack_arr(stack_a, arr);
 	return (result);
 }
 
@@ -65,7 +65,8 @@ void	ft_free(char **arr)
 	}
 	free(arr);
 }
-void free_stack_arr(t_list **stack_a, char **arr)
+
+void	free_stack_arr(t_list **stack_a, char **arr)
 {
 	ft_lstclear(stack_a);
 	ft_free(arr);

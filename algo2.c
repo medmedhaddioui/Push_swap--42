@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 14:24:49 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/13 19:05:41 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:32:48 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	*ft_sort(int *arr, int len)
 {
-	
 	int	i;
 	int	j;
 	int	tmp;
@@ -90,6 +89,7 @@ void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 	int	*arr;
 	int	index_arr;
 	int	index;
+
 	arr = ft_copy(*stack_a, c);
 	if (!arr)
 	{
@@ -100,27 +100,29 @@ void	sort_100(t_list **stack_a, t_list **stack_b, int c)
 	while (index < c)
 	{
 		index_arr = get_index(arr, c, (*stack_a)->content);
-		index = push_check_100(index_arr,index,stack_a,stack_b);
+		index = push_check_100(index_arr, index, stack_a, stack_b);
 	}
 	free(arr);
 	back_a(stack_a, stack_b, c);
 }
-int push_check_100(int index_arr,int index, t_list **stack_a,t_list **stack_b)
+
+int	push_check_100(int index_arr, int index, t_list **stack_a, t_list **stack_b)
 {
-	int re;
+	int	re;
+
 	re = 15;
 	if (index_arr < index)
 	{
-			pb(stack_a, stack_b);
-			rb(stack_b, 0);
-			index++;
+		pb(stack_a, stack_b);
+		rb(stack_b, 0);
+		index++;
 	}
 	else if (index_arr <= index + re)
 	{
-			pb(stack_a, stack_b);
-			index++;
+		pb(stack_a, stack_b);
+		index++;
 	}
 	else
 		ra(stack_a, 0);
-	return index;
+	return (index);
 }

@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/16 04:04:47 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/17 14:35:04 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_stack(t_list **stack_a)
+void	free_stack(t_list **stack_a)
 {
 	ft_lstclear(stack_a);
 	ft_exit();
 }
-int sort_check(t_list *stack_a)
+
+int	sort_check(t_list *stack_a)
 {
 	t_list	*second;
 
@@ -27,12 +28,12 @@ int sort_check(t_list *stack_a)
 		while (second)
 		{
 			if (stack_a->content > second->content)
-				return 0;
+				return (0);
 			second = second->next;
 		}
 		stack_a = stack_a->next;
 	}
-	return 1;
+	return (1);
 }
 
 void	sort_size(t_list **stack_a, t_list **stack_b)
@@ -41,7 +42,7 @@ void	sort_size(t_list **stack_a, t_list **stack_b)
 
 	c = ft_lstsize(*stack_a);
 	if (sort_check(*stack_a))
-		return;
+		return ;
 	if (c == 2)
 		sort_2(stack_a);
 	if (c == 3)
@@ -55,6 +56,7 @@ void	sort_size(t_list **stack_a, t_list **stack_b)
 	if (c > 100)
 		sort_500(stack_a, stack_b, c);
 }
+
 t_list	*put(char **arr, t_list **stack_a)
 {
 	t_list	*node;
@@ -62,23 +64,23 @@ t_list	*put(char **arr, t_list **stack_a)
 
 	j = 0;
 	if (!arr[j])
-		free_stack_arr(stack_a,arr);
+		free_stack_arr(stack_a, arr);
 	while (arr[j])
 	{
 		if (num_arg(arr[j]))
-			free_stack_arr(stack_a,arr);
+			free_stack_arr(stack_a, arr);
 		j++;
 	}
 	while (j > 0)
 	{
-		node = ft_lstnew(ft_atoi(arr[--j], stack_a , arr));
+		node = ft_lstnew(ft_atoi(arr[--j], stack_a, arr));
 		if (!node)
-			free_stack_arr(stack_a,arr);
+			free_stack_arr(stack_a, arr);
 		ft_lstadd_front(stack_a, node);
 	}
-	
 	return (*stack_a);
 }
+
 int	main(int ac, char **av)
 {
 	int		i;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:35 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/15 15:41:21 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/17 14:35:18 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
+
 void	ft_lstclear(t_list **lst)
 {
 	t_list	*tmp;

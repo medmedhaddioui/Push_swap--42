@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:13 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/10 23:59:40 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/17 14:33:21 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ int	dup_check(t_list *stack_a)
 		while (second)
 		{
 			if (stack_a->content == second->content)
-				return 0;
+				return (0);
 			second = second->next;
 		}
 		stack_a = stack_a->next;
 	}
-	return 1;
+	return (1);
 }
 
 int	num_arg(char *s)
