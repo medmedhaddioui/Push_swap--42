@@ -13,11 +13,11 @@ BSRC = checker_bonus.c get_next_line.c get_next_line_utils.c \
 
 BOBJ = $(BSRC:.c=.o)
 
-all: $(NAME) 
+all: $(NAME) $(B_NAME)
 
 CFLAG =  -Wall -Wextra -Werror
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) 
 	cc $(CFLAG)  $(OBJ) -o $(NAME) 
 
 bonus : $(B_NAME)

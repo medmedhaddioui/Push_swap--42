@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:27:19 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/17 14:34:24 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/18 19:03:54 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,6 @@ char	*get_next_line(int fd)
 	line = ft_substr(buff, 0, len + 1);
 	tmp = buff;
 	buff = ft_substr(buff, len + 1, ft_strlen(buff));
-	if (buff)
-	{
-		free(buff);
-		buff = NULL;
-	}
 	free(tmp);
 	return (line);
 }

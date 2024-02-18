@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:29 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/17 14:35:04 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:06:55 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int	main(int ac, char **av)
 	if (!dup_check(stack_a))
 		free_stack(&stack_a);
 	sort_size(&stack_a, &stack_b);
+
 	ft_lstclear(&stack_a);
 	return (0);
 }
