@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:20 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/17 14:34:52 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/19 20:43:10 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_front(t_list **lst, t_list *new);
-long long			ft_atoi(const char *nptr, t_list **stack_a, char **arr);
+long long			ft_atoi( char *nptr, t_list **stack_a, char **arr);
 void				sa(t_list **stack_a, int i);
 void				sb(t_list **stack_b, int i);
 void				ss(t_list **stack_a, t_list **stack_b, int i);
@@ -57,6 +57,7 @@ void				sort_5(t_list **stack_a, t_list **stack_b, int c);
 void				sort_100(t_list **stack_a, t_list **stack_b, int c);
 void				sort_500(t_list **stack_a, t_list **stack_b, int c);
 int					min(t_list *s);
+int check_len (char *str);
 int					*ft_copy(t_list *stack_a, int len);
 int					get_index(int *arr, int len, int nb);
 int					*ft_sort(int *arr, int len);

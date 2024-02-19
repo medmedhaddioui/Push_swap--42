@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/17 14:35:29 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/19 20:45:33 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long	ft_atoi(const char *nptr, t_list **stack_a, char **arr)
+long long	ft_atoi(char *nptr, t_list **stack_a, char **arr)
 {
 	int			sign;
 	long long	result;
@@ -21,6 +21,8 @@ long long	ft_atoi(const char *nptr, t_list **stack_a, char **arr)
 	result = 0;
 	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
+	if (!check_len(nptr))
+		free_stack_arr(stack_a,arr);
 	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')

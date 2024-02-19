@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:56:37 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/17 14:35:39 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/19 20:42:14 by medmed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,20 @@ int	get_index_b(t_list *stack_b, int nb)
 		stack_b = stack_b->next;
 	}
 	return (index);
+}
+
+
+int check_len (char *str)
+{
+	int i;
+	i = 0;
+	int len = 0;
+	while (str[i] == '0')
+		i++;
+	while (str[len])
+		len++;
+	len -= i;
+	if (len > 12)
+		return 0;
+	return 1;
 }
