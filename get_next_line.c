@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 14:27:19 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/18 19:03:54 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:13:18 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,12 @@ char	*get_next_line(int fd)
 	char		*s1;
 
 	s1 = NULL;
+	if (fd < 0)
+	{
+		free(buff);
+		buff = NULL;
+		return NULL;
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= INT_MAX)
 		return (NULL);
 	buff = read_file(fd, buff);

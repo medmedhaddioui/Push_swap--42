@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 16:25:21 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/17 14:33:52 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:13:58 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	ft_read_inst(t_list **stack_a, t_list **stack_b)
 	{
 		if ((instruct_cmp(str, stack_a, stack_b)) == 0)
 		{
+			get_next_line(-1);
 			free_stacks(stack_a, stack_b);
 			free(str);
 			ft_exit();
