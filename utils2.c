@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:56:37 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/19 20:42:14 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/22 17:33:02 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,14 @@ int check_len (char *str)
 	int i;
 	i = 0;
 	int len = 0;
+	if(str[0] == '+' || str[0] == '-')
+	{
+		len++;
+		i++;
+	}
 	while (str[i] == '0')
 		i++;
+	i--;
 	while (str[len])
 		len++;
 	len -= i;
