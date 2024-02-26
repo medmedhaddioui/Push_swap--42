@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:56:37 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/22 17:33:02 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:48:54 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,14 @@ int	get_index_b(t_list *stack_b, int nb)
 	return (index);
 }
 
-
-int check_len (char *str)
+int	check_len(char *str)
 {
-	int i;
+	int	i;
+	int	len;
+
 	i = 0;
-	int len = 0;
-	if(str[0] == '+' || str[0] == '-')
+	len = 0;
+	if (str[0] == '+' || str[0] == '-')
 	{
 		len++;
 		i++;
@@ -87,6 +88,6 @@ int check_len (char *str)
 		len++;
 	len -= i;
 	if (len > 12)
-		return 0;
-	return 1;
+		return (0);
+	return (1);
 }

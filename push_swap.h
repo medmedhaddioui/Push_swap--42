@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medmed <medmed@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 15:50:20 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/19 20:43:10 by medmed           ###   ########.fr       */
+/*   Updated: 2024/02/22 18:51:50 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void				sort_5(t_list **stack_a, t_list **stack_b, int c);
 void				sort_100(t_list **stack_a, t_list **stack_b, int c);
 void				sort_500(t_list **stack_a, t_list **stack_b, int c);
 int					min(t_list *s);
-int check_len (char *str);
+int					check_len(char *str);
 int					*ft_copy(t_list *stack_a, int len);
 int					get_index(int *arr, int len, int nb);
 int					*ft_sort(int *arr, int len);

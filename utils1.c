@@ -6,7 +6,7 @@
 /*   By: mel-hadd <mel-hadd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 17:30:39 by mel-hadd          #+#    #+#             */
-/*   Updated: 2024/02/22 17:29:55 by mel-hadd         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:48:59 by mel-hadd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ long long	ft_atoi(char *nptr, t_list **stack_a, char **arr)
 	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
 	if (!check_len(nptr))
-		free_stack_arr(stack_a,arr);
+		free_stack_arr(stack_a, arr);
 	if (*nptr == '-' || *nptr == '+')
 	{
 		if (*nptr == '-')

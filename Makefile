@@ -1,37 +1,32 @@
 NAME = push_swap
-B_NAME = checker
+NAME_BONUS = checker
 
-SRC = push_swap.c utils.c utils1.c actions1.c actions2.c \
-	  actions3.c error.c ft_split.c algo1.c utils2.c algo2.c algo3.c \
+SRC =	push_swap.c utils.c utils1.c actions1.c actions2.c \
+	 	actions3.c error.c ft_split.c algo1.c utils2.c algo2.c algo3.c \
 
-OBJ = $(SRC:.c=.o)
-
-BSRC = checker_bonus.c get_next_line.c get_next_line_utils.c \
+SRC_BONUS =	checker_bonus.c get_next_line.c get_next_line_utils.c \
 	   bonus_utils.c utils.c utils1.c actions1.c actions2.c \
-		push.c error.c ft_split.c algo1.c utils2.c algo2.c algo3.c 
+		push.c error.c ft_split.c algo1.c utils2.c algo2.c algo3.c
 		
+OBJECT = $(SRC:.c=.o)
+OBJECT_BONUS = $(SRC_BONUS:.c=.o)
 
-BOBJ = $(BSRC:.c=.o)
+all : $(NAME)
 
-all: $(NAME) $(B_NAME)
+$(NAME): $(SRC)
+	cc -Wextra -Werror -Wall $(SRC) -o $(NAME)
 
-CFLAG =  -Wall -Wextra -Werror
+bonus: $(NAME_BONUS)
 
-$(NAME) : $(OBJ) 
-	cc $(CFLAG)  $(OBJ) -o $(NAME) 
-
-bonus : $(B_NAME)
-
-$(B_NAME) :$(BOBJ) 
-	cc $(CFLAG)  $(BOBJ) -o $(B_NAME) 
+$(NAME_BONUS): $(SRC_BONUS)
+	cc -Wall -Wextra -Werror $(SRC_BONUS) -o $(NAME_BONUS)
 
 clean:
-	rm -rf $(OBJ) $(BOBJ)
+	rm -rf $(OBJECT) $(OBJECT_BONUS)
 
 fclean: clean
-	rm -rf $(NAME) $(B_NAME)
+	rm -rf $(NAME) $(NAME_BONUS)
 
-re : fclean all
+re: fclean all bonus
 
 .PHONY: all bonus clean fclean re
-
